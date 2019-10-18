@@ -1,4 +1,4 @@
-package com.like.cloud.model;
+package com.like.cloud.vo;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import lombok.Data;
  * @Version 1.0
  */
 @Data
-public class User {
+public class UserVO {
 
     private int id;
     private String name;

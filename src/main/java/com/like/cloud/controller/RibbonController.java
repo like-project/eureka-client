@@ -1,6 +1,6 @@
 package com.like.cloud.controller;
 
-import com.like.cloud.model.User;
+import com.like.cloud.vo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -31,11 +31,11 @@ public class RibbonController {
     private LoadBalancerClient loadBalancerClient;
 
     @GetMapping("/user/{id}")
-    public User findBy(@PathVariable int id){
+    public UserVO findBy(@PathVariable int id){
         ServiceInstance serviceInstance = this.loadBalancerClient.choose("cloud-client");
         String str = serviceInstance.getServiceId() + "#" + serviceInstance.getHost() + "#" + serviceInstance.getPort();
         log.info("id={}",id);
-        User user = new User();
+        UserVO user = new UserVO();
         user.setId(id);
         user.setName(str);
 
