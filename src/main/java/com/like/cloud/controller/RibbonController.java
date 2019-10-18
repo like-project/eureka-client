@@ -19,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
  * @Version 1.0
  */
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 @Slf4j
 public class RibbonController {
 
@@ -30,7 +30,7 @@ public class RibbonController {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/ribbon/{id}")
     public UserVO findBy(@PathVariable int id){
         ServiceInstance serviceInstance = this.loadBalancerClient.choose("cloud-client");
         String str = serviceInstance.getServiceId() + "#" + serviceInstance.getHost() + "#" + serviceInstance.getPort();
