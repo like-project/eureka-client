@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @ClassName RibbonController
- * @Description TODO
+ * @Description ribbon
  * @Author Ke
  * @Date 2019/10/16 16:05
  * @Version 1.0

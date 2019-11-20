@@ -11,4 +11,6 @@ eureka:
       defaultZone: http://admin:admin@127.0.0.1:8761/eureka/
   instance:
     prefer-ip-address: true
-    ip-address: 127.0.0.1
+    lease-renewal-interval-in-seconds: 10 #租期更新时间间隔（默认30秒）
+    lease-expiration-duration-in-seconds: 30  #租期到期时间
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${spring.application.instance_id:${server.port}}

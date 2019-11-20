@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ClassName FeignController
- * @Description TODO
+ * @Description feign
  * @Author Ke
  * @Date 2019/10/18 18:18
  * @Version 1.0
